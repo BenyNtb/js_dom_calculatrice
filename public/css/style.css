@@ -1,0 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* CORPS CALCULATRICE */
+
+body{
+    max-width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+/* COULEUR CALCULATRICE */
+.calculatrice{
+    background-color:rgba(228, 58, 92, 0.596);
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* ECRAN */
+
+.screen{
+    width: 100%;
+    height: 100px;
+    background-color:white;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 5px;
+    font-size: 25px;
+}
+
+/* TOUCHES */
+
+.keys{
+    display: grid;
+    grid-template-columns: repeat(4,50px);
+    grid-template-rows: repeat(5,50px);
+    grid-gap: 7px;
+    border-radius: ;
+    
+}
