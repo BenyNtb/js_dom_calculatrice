@@ -1,79 +1,80 @@
-*, *::before, *::after {
-    box-sizing: border-box;
-    font-family: Gotham Rounded, sans-serif;
-    font-weight: normal;
-}
+
 
 body {
-padding: 0;
-margin: 0;
-background: linear-gradient(to bottom, #1197f0, #dd72eb);
-height: 100vh;
-justify-content: center;
-align-items: center;
-display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Comic', Courier, monospace;
+    height: 100vh;
+    display: flex;
+    background-image: linear-gradient(to top, #181a19 0%, #e74176 100%);
 }
 
+/* calculatrice */
 .calculatrice {
-flex-direction: column;
-display: flex;
-justify-content: center;
-align-content: center;
-/* min-height: 100vh; */
+    background-color: rgb(245, 238, 244);
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 5px rgb(82, 81, 81);
+}
 
-height: 80vh;
-/* max-width: 100vw; */
-background-color: #222222;
+.ecran {
+    background-color: rgb(121, 226, 240);
+    height: 50px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 15px;
+    font-size: 30px;
+}
 
+input {
+    color: red;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    border-radius: 5px;
 }
 
 .touches {
     display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    grid-template-columns: repeat(4, 55px);
+    grid-template-rows: repeat(5, 55px);
     grid-gap: 13px;
-    
 }
 
-
-.calculatrice > button {
-cursor: pointer;
-font-size: 2rem;
-border: 1px solid white;
-outline: none;
-background-color: rgba(255, 255, 255, .75);
-border-radius: 3%;
-padding: 150px;
+button {
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: rgb(218, 216, 216);
+    box-shadow: 0 3px rgb(68, 67, 67);
+    font-size: 20px;
 }
 
-/* .calculatrice > button:hover {
-background-color: rgba(255, 255, 255, .9);
-} */
-
-/* .span-two {
-grid-column: span 2;
-} */
-
-.ecran {
-/* grid-column: 1 / -1; */
-background-color:rgb(198, 237, 255);
-display: flex;
-align-items: flex-end;
-justify-content: space-around;
-flex-direction: column;
-padding: 10px;
-word-wrap: break-word;
-word-break: break-all;
-border-radius: 3%;
-height: 100px;
+button:active {
+    box-shadow: 0 1px  rgb(68, 67, 67);
+    transform: translateY(2px);
 }
 
-.ecran .previous-operand {
-color: rgba(255, 255, 255, .75);
-font-size: 1.5rem;
+button[data-all-clear] {
+    background-color: rgb(246, 167, 226);
+    font-weight: bold;
 }
 
-.ecran .current-operand {
-color: white;
-font-size: 2.5rem;
+button[data-equals] {
+    grid-column: span 4;
+    background-color: rgb(246, 167, 226);
+    font-weight: bold;
 }
+
+#operateur {
+    background-color: rgb(246, 167, 226);
+    font-weight: bold;
+}
+
