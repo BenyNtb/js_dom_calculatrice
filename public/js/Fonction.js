@@ -54,29 +54,14 @@ class Calculatrice {
     this.operateur1 = ''
 }
 
-    affichernombre(number) {
-    let stringNumber = number.toString()
-    let nbrentier = parseFloat(stringNumber.split('.')[0])
-    let nbrdecimal = stringNumber.split('.')[1]
-    let chiffreecran
-    if (isNaN(nbrentier)) {
-    chiffreecran = ''
-    } else {
-    chiffreecran = nbrentier.toLocaleString('en', { maximumFractionDigits: 0 })
-    }
-    if (nbrdecimal != null) {
-    return `${chiffreecran}.${nbrdecimal}`
-    } else {
-    return chiffreecran
-    }
-}
+
 
 majecran() {
     this.elementactuel.innerText =
-    this.affichernombre(this.operateur2)
+    this.operateur2
     if (this.operation != null) {
     this.premierelement.innerText =
-        `${this.affichernombre(this.operateur1)} ${this.operation}`
+        `${this.operateur1} ${this.operation}`
     } else {
     this.premierelement.innerText = ''
     }
@@ -93,28 +78,6 @@ let elementactuel = document.querySelector('[data-current-operand]')
 
 let calculatrice = new Calculatrice(premierelement, elementactuel)
 
-chiffrebouton.forEach(button => {
-button.addEventListener('click', () => {
-    calculatrice.ajouter(button.innerText)
-    calculatrice.majecran()
-})
-})
-
-math.forEach(button => {
-button.addEventListener('click', () => {
-    calculatrice.choisiroperation(button.innerText)
-    calculatrice.majecran()
-})
-})
-
-boutonegale.addEventListener('click', button => {
-calculatrice.calcul()
-calculatrice.majecran()
-})
-
-boutoneffacer.addEventListener('click', button => {
-    calculatrice.effacer()
-    calculatrice.majecran()
-})
+export {chiffrebouton,math,boutonegale,boutoneffacer,calculatrice}
 
 
