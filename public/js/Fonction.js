@@ -43,7 +43,7 @@ class Calculatrice {
     case '*':
         calcul = a * b
         break
-    case '÷':
+    case '/':
         calcul = a / b
         break
     default:
